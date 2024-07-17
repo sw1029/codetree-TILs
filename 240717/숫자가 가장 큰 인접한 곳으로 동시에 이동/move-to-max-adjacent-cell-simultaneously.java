@@ -39,7 +39,12 @@ public class Main {
 						if(k!=0)max=Math.max(map[j][k-1], max);
 						if(k!=n-1)max=Math.max(map[j][k+1], max);//최댓값 확인 후 상하좌우 순서로
 						
-						if(j!=0 && map[j-1][k]==max) {
+						if(map[j][k]>max) {
+							if(newBallMap[j][k])newBallMap[j][k]=false;
+							else newBallMap[j][k] = true;
+						}
+						
+						else if(j!=0 && map[j-1][k]==max) {
 							if(newBallMap[j-1][k])newBallMap[j-1][k]=false;
 							else newBallMap[j-1][k] = true;
 						}
@@ -54,12 +59,7 @@ public class Main {
 						else if(k!=n-1 && map[j][k+1]==max) {
 							if(newBallMap[j][k+1])newBallMap[j][k+1]=false;
 							else newBallMap[j][k+1] = true;
-						}else {
-							if(newBallMap[j][k])newBallMap[j][k]=false;
-							else newBallMap[j][k] = true;
 						}
-						
-						
 						
 					}
 					
