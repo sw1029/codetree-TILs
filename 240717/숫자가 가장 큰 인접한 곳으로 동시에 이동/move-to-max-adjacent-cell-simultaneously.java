@@ -69,10 +69,11 @@ public class Main {
 			int count=0,l=-1,r=-1;
 			for(int p = 0; p < n; p++) {
 				for(int q = 0; q < n; q++) {
-					if(newBallMap[p][q]&&ballMap[p][q]==newBallMap[p][q]) {
+					if(newBallMap[p][q]&&ballMap[p][q]) {
 						count++;
 						if(count==1) {
-							l=p;r=q;
+							l=p;
+							r=q;
 						}
 					}
 					if(count>=2)newBallMap[p][q]=false;
