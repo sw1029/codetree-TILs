@@ -76,9 +76,10 @@ public class Main {
 							l=p;
 							r=q;
 						}
+						if(count==2)newBallMap[l][r]=false;
 					}
 					
-					if(count==2)newBallMap[l][r]=false;
+					
 				}
 			}
 			
