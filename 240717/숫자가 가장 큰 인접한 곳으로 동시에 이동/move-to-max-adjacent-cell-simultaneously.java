@@ -71,12 +71,13 @@ public class Main {
 				for(int q = 0; q < n; q++) {
 					if(newBallMap[p][q]&&ballMap[p][q]) {
 						count++;
+						if(count>=2)newBallMap[p][q]=false;
 						if(count==1) {
 							l=p;
 							r=q;
 						}
 					}
-					if(count>=2)newBallMap[p][q]=false;
+					
 					if(count==2)newBallMap[l][r]=false;
 				}
 			}
