@@ -7,13 +7,14 @@ public class Main {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
+		
 		String[] input = br.readLine().split(" ");
 		
 		int n = Integer.parseInt(input[0]), r = Integer.parseInt(input[1]), c = Integer.parseInt(input[2]);
 		
-		int [] [] map = new int[n+2][n+2];//테두리까지 선언
+		int [] [] map = new int[n][n];
 		
-		for(int i = 1; i <= n; i++) {
+		for(int i = 0; i < n; i++) {
 			String [] inp = br.readLine().split(" ");
 			for(int j = 0; j < n; j++) {
 				map[i][j] = Integer.parseInt(inp[j]);
@@ -25,7 +26,10 @@ public class Main {
 			return;
 		}
 		//r행c열에서 시작
-		r++;
+		
+		
+		
+		
 		while(true) {
 			bw.write(map[r-1][c-1] + " ");
 			if(r!=1 && map[r-1][c-1]<map[r-2][c-1]) {//north
@@ -39,7 +43,9 @@ public class Main {
 			}else break;//더이상 동작이 불가능한 경우
 		}
 		bw.flush();
-
+		
 	}
 
+	
+	
 }
