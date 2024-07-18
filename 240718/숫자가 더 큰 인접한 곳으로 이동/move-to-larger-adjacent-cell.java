@@ -19,6 +19,11 @@ public class Main {
 				map[i][j+1] = Integer.parseInt(inp[j]);
 			}
 		}
+
+		if(n==1){
+			System.out.print(map[0][0]);
+			return;
+		}
 		//r행c열에서 시작
 		r++;
 		c++;
