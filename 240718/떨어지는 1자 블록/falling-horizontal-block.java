@@ -21,7 +21,7 @@ public class Main {
 		}
 		for(int i = 0; i < n ;i++) {
 			for(int j = k-1;j < k+m-1;j++) {
-				if(map[i+1][j]==1 || i == n-1) {
+				if(i == n-1||map[i+1][j]==1 ) {
 					for(int l = k-1; l < k+m-1; l++) {
 						map[i][l] = 1;
 						
