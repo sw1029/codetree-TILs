@@ -72,6 +72,7 @@ public class Main {
 				
 				count++;
 			}
+            count = 1;
 		}
 		
 		
