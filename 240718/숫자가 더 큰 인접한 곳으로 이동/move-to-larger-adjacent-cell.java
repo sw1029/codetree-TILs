@@ -16,7 +16,7 @@ public class Main {
 		for(int i = 1; i <= n; i++) {
 			String [] inp = br.readLine().split(" ");
 			for(int j = 0; j < n; j++) {
-				map[i][j+1] = Integer.parseInt(inp[j]);
+				map[i][j] = Integer.parseInt(inp[j]);
 			}
 		}
 
@@ -26,7 +26,6 @@ public class Main {
 		}
 		//r행c열에서 시작
 		r++;
-		c++;
 		while(true) {
 			bw.write(map[r-1][c-1] + " ");
 			if(r!=1 && map[r-1][c-1]<map[r-2][c-1]) {//north
