@@ -22,8 +22,10 @@ public class Main {
         }
         for(int i = 1; i <= k; i++) {
         	if(st.length()>0 && st.split(" ")[c-1].equals(i+""))num(k,n,c+1,st + i+ " ",bc+1);
-        	else num(k,n,c+1,st + i+ " ",0);
+        	else num(k,n,c+1,st + i+ " ",bc);
         }
     	
     }
+
+	
 }
