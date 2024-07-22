@@ -25,8 +25,8 @@ public class Main {
         for(int i = 1; i <= k; i++) {
         	if(st.length()>0 && st.split(" ")[c-1].equals(i+"")) {
         		bc+=1;
-        		if(bc>2)isf = true;
-        		num(k,n,c+1,st + i+ " ",bc+1,isf);
+        		if(bc>2)num(k,n,c+1,st + i+ " ",bc,true);
+        		else num(k,n,c+1,st + i+ " ",bc,isf);
         	}
         	else num(k,n,c+1,st + i+ " ",1,isf);
         	
