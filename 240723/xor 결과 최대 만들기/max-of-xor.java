@@ -3,16 +3,17 @@ import java.io.*;
 
 public class Main {
 
-	public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt(),m = scan.nextInt();
+	public static void main(String[] args) throws IOException{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String [] inp = br.readLine().split(" ");
+		int n = Integer.parseInt(inp[0]),m = Integer.parseInt(inp[1]);
         
         int []nums = new int[n];
         
         Stack<Integer>st = new Stack<>();
         
-        
-        for(int i = 0; i < n;i++)nums[i]=scan.nextInt();
+        String[] input = br.readLine().split(" ");
+        for(int i = 0; i < n;i++)nums[i]=Integer.parseInt(input[i]);
         
         num(m,nums,st,0,n-1,0,0);
         System.out.println(max);
@@ -24,7 +25,7 @@ public class Main {
 			max = Math.max(max, xor);
 			return;
 		}
-		for(int i = 0; i <= end; i++) {
+		for(int i = start; i <= end; i++) {
 			if(!st.contains(i)) {
 				st.push(i);
 				if(count == 0)num(m,nums,st,i+1,end,count+1,nums[i]);
