@@ -20,15 +20,16 @@ public class Main {
         qu.add(new block(0,0));
         int [] dx = {-1,0,1,0};
         int [] dy = {0,1,0,-1};
-       
+        trv[0][0] = true;
         while(!qu.isEmpty()) {
         	block now = qu.poll();
-        	trv[now.x][now.y] = true;
+        	
         	for(int i = 0; i < 4; i ++) {
         		int nx = now.x + dx[i];
         		int ny = now.y + dy[i];
         		if(nx>=0&&ny>=0 && nx< n && ny <m && map[nx][ny] && !trv[nx][ny]) {
         			qu.add(new block(nx,ny));
+        			trv[nx][ny] = true;
         		}
         	}
         }
