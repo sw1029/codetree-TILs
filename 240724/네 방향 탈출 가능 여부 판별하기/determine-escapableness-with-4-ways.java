@@ -28,9 +28,11 @@ public class Main {
         		int nx = now.x + dx[i];
         		int ny = now.y + dy[i];
         		if(nx>=0&&ny>=0 && nx< n && ny <m && map[nx][ny] && !trv[nx][ny]) {
-        			qu.add(new block(nx,ny));
         			trv[nx][ny] = true;
+					qu.add(new block(nx,ny));
         		}
+					
+        			
         	}
         }
         int answer = 0;
