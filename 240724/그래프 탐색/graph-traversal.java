@@ -29,13 +29,17 @@ public class Main {
 	static Map <String,nd> nds;//노드 꺼내오는용
 	static Set<String> nSet = new HashSet<>();//방문여부 확인
 	static void DFS(nd N) {
-		Object[] ndss = N.nds.keySet().toArray();//방문가능한 노드의 배열
-		for(int i = 0; i < ndss.length;i ++) {
-			if(!nSet.contains((String)ndss[i])) {//방문하지 않았을 경우
-				nSet.add((String)ndss[i]);//방문처리
-				DFS(nds.get(ndss[i]));//방문해서 다시 dfs
+		if(Objects.isNull(N))return;
+		if(!N.nds.isEmpty()) {
+			Object [] ndss = N.nds.keySet().toArray();//방문가능한 노드의 배열
+			for(int i = 0; i < ndss.length;i ++) {
+				if(!nSet.contains((String)ndss[i])) {//방문하지 않았을 경우
+					nSet.add((String)ndss[i]);//방문처리
+					DFS(nds.get(ndss[i]));//방문해서 다시 dfs
+				}
 			}
 		}
+		
 		
 		
 	}
