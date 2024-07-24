@@ -8,7 +8,10 @@ public class Main {
         String [] input = br.readLine().split(" ");
         int n=Integer.parseInt(input[0]),m=Integer.parseInt(input[1]);
         nds = new HashMap<>();
-        
+        if(m == 0){
+            System.out.print(0);
+            return;
+        }
         for(int i = 0; i < m; i++) {
         	String [] inp = br.readLine().split(" ");
         	
