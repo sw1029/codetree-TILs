@@ -20,12 +20,15 @@ public class Main {
 		}
 		for(int i = 0; i < n; i++) {
 			int k = coin[i] - 1;
-			trv[k] = true;
-			nums[k] = 1;
+			if(k < m) {
+				trv[k] = true;
+				nums[k] = 1;
+			}
 		}
 		
 		if(nc(m-1)==0)System.out.println(-1);
 		else System.out.println(nums[m-1]);
+		
 		
     }
 	static int []coin;
