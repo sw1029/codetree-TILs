@@ -17,14 +17,14 @@ public class Main {
         counts[2] = 1;
         counts[3] = 1;
         
-        System.out.println(stairs(n)%10007);
+        System.out.println(stairs(n));
     }
 	static long [] counts;
 	static boolean [] trv;
 	
 	static long stairs(int n) {
 		if(!trv[n]) {
-			counts[n] = stairs(n-2) + stairs(n-3);
+			counts[n] = (stairs(n-2) + stairs(n-3))%10007;
 			trv[n] = true;
 		}
 		return counts[n];
