@@ -15,6 +15,9 @@ public class Main {
 		for(int i = 0; i < n; i++) {
 			coin[i] = Integer.parseInt(inp[i]);
 		}
+		for(int i = 0; i < m; i++) {
+			nums[i] = -1;
+		}
 		for(int i = 0; i < n; i++) {
 			trv[coin[i]-1] = true;
 			nums[coin[i]-1] = 1;
