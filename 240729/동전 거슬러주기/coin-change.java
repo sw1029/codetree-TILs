@@ -29,6 +29,7 @@ public class Main {
 	
 	static int nc(int n) {
 		if(!trv[n]) {
+			//System.out.println("visited " + (n+1));
 			trv[n] = true;
 			ArrayList<Integer>nList = new ArrayList<>();
 			for(int i = 0; i < coin.length; i++) {
@@ -36,7 +37,9 @@ public class Main {
 				if(k >= 0) nList.add(nc(k));
 			}
 			Collections.sort(nList);
-			nums[n] = nList.get(0) + 1;
+			int nNum = 0;
+			if(nList.size()!=0)nNum = nList.get(0);
+			nums[n] = nNum + 1;
 		}
 		return nums[n];
 	}
